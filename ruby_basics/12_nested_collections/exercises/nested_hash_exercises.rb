@@ -41,6 +41,13 @@ end
 def find_beautiful_languages(languages)
   # Take languages and return a hash containing only languages which have the
   # key/value pair { is_beautiful?: true } listed in their information
+  beautiful = {}
+  languages.each do |key, value|
+    if value[:is_beautiful?]
+      beautiful[key] = value
+    end
+  end
+  beautiful
 end
 
 def find_language_facts(languages, language_name, fact_index = 0)
