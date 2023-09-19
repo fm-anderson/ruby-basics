@@ -66,4 +66,9 @@ def find_language_facts(languages, language_name, fact_index = 0)
   #                 initial_release: 'December 4, 1995',
   #                 is_beautiful?: false }
   # }
+  if languages[language_name]
+    facts = languages[language_name][:facts]
+      return facts[fact_index] || facts[0]
+  end
+  nil
 end
