@@ -74,4 +74,11 @@ def find_favorite(array_of_hash_objects)
 
   # TIP: there will only be a maximum of one hash in the array that will
   # return true to the :is_my_favorite? key
+  favorite = nil
+  array_of_hash_objects.each do |single_hash|
+    if single_hash[:is_my_favorite?]
+      favorite = single_hash
+    end
+  end
+  favorite
 end
